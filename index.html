@@ -274,9 +274,9 @@ body.dark .concept-toggle{background:#142c4a;color:#bbdefb}
     <h1>ECEN 106 — ICT &amp; Building Auxiliary Systems</h1>
     <p class="sub">Reviewer + Quiz Bee (2000&nbsp;MCQs in 8 topics). Same examiner flow as CA3 Communications / ENVS bank—offline-capable via service worker.</p>
     <div class="mode-cards">
-      <div class="mode-card reviewer-card"><div class="icon">📖</div><h2>Reviewer</h2><p>Browse MCQs with correct answers, rationale, and citations.</p><span class="tag">Browse</span></div>
-      <div class="mode-card quiz-card"><div class="icon">🎯</div><h2>Quiz Bee</h2><p>Select topics (250 questions each deck), shuffle, optional timer.</p><span class="tag">Practice</span></div>
-      <div class="mode-card concepts-card"><div class="icon">📐</div><h2>Key concepts</h2><p>Cheatsheet: codes, cabling limits, NFPA notions—scroll to formulae deck.</p><span class="tag">Study</span></div>
+      <div class="mode-card reviewer-card" role="button" tabindex="0" data-mode="reviewer"><div class="icon">📖</div><h2>Reviewer</h2><p>Browse MCQs with correct answers, rationale, and citations.</p><span class="tag">Browse</span></div>
+      <div class="mode-card quiz-card" role="button" tabindex="0" data-mode="quiz"><div class="icon">🎯</div><h2>Quiz Bee</h2><p>Select topics (250 questions each deck), shuffle, optional timer.</p><span class="tag">Practice</span></div>
+      <div class="mode-card concepts-card" role="button" tabindex="0" data-mode="concepts"><div class="icon">📐</div><h2>Key concepts</h2><p>Cheatsheet: codes, cabling limits, NFPA notions—scroll to formulae deck.</p><span class="tag">Study</span></div>
     </div>
     <p style="font-size:12px;color:#78909c">Keys: <span class="kbd">A</span><span class="kbd">D</span> or <span class="kbd">1</span><span class="kbd">4</span> · <kbd style="margin:0;background:#263238;padding:4px;border-radius:4px;color:#cfd8dc">Enter</kbd> next · Esc close</p>
   </div>
@@ -334,8 +334,8 @@ body.dark .concept-toggle{background:#142c4a;color:#bbdefb}
   </div>
 </div>
 
-<script src="version.js?v=materials-2026-05-27-v7"></script>
-<script src="questions.js?v=materials-2026-05-27-v7"></script>
+<script src="version.js?v=materials-2026-05-27-v7-buttons"></script>
+<script src="questions.js?v=materials-2026-05-27-v7-buttons"></script>
 <script>
 (function(){
 'use strict';
@@ -497,16 +497,42 @@ function showSetup(){
 function showLandingAfterResults(){el('quiz-results').style.display='none';showLanding();}
 function restartQuizSetup(){el('quiz-results').style.display='none';el('topic-grid').innerHTML='';showSetup();}
 
+function handleModeCard(mode){
+  if(mode==='reviewer'){closeQuizOverlay();return;}
+  if(mode==='quiz'){
+    if(!QB().length){alert('Question bank did not load. Hard-refresh (Ctrl+Shift+R) or check your connection.');return;}
+    showSetup();
+    return;
+  }
+  if(mode==='concepts'){
+    closeQuizOverlay();
+    var es=document.getElementById('concepts-section');
+    if(es)es.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
 function wireHomeModeCards(){
   var root=document.getElementById('quiz-landing');
   if(!root||root.dataset.wired==='1')return;
   root.dataset.wired='1';
   root.addEventListener('click',function(ev){
     var card=ev.target.closest('.mode-card');if(!card)return;
-    if(card.classList.contains('reviewer-card')){closeQuizOverlay();return;}
-    if(card.classList.contains('quiz-card')){showSetup();return;}
-    if(card.classList.contains('concepts-card')){closeQuizOverlay();var es=document.getElementById('concepts-section');if(es)es.scrollIntoView({behavior:'smooth'});}
-  },true);
+    var mode=card.dataset.mode;
+    if(mode)handleModeCard(mode);
+    else if(card.classList.contains('reviewer-card'))handleModeCard('reviewer');
+    else if(card.classList.contains('quiz-card'))handleModeCard('quiz');
+    else if(card.classList.contains('concepts-card'))handleModeCard('concepts');
+  });
+  root.addEventListener('keydown',function(ev){
+    if(ev.key!=='Enter'&&ev.key!==' ')return;
+    var card=ev.target.closest('.mode-card');if(!card)return;
+    ev.preventDefault();
+    var mode=card.dataset.mode||'';
+    if(!mode&&card.classList.contains('reviewer-card'))mode='reviewer';
+    if(!mode&&card.classList.contains('quiz-card'))mode='quiz';
+    if(!mode&&card.classList.contains('concepts-card'))mode='concepts';
+    if(mode)handleModeCard(mode);
+  });
 }
 
 function buildTopicGrid(){
@@ -667,6 +693,14 @@ window.nextQuestion=nextQuestion;
 window.showLandingAfterResults=showLandingAfterResults;
 window.restartQuizSetup=restartQuizSetup;
 window.retryWrong=retryWrong;
+window.handleModeCard=handleModeCard;
+
+function routeFromHash(){
+  var h=(location.hash||'').toLowerCase();
+  if(h==='#quiz'||h==='#quizbee'){openQuizBee();return;}
+  if(h==='#review'){closeQuizOverlay();return;}
+  openQuizOverlay();
+}
 
 document.addEventListener('keydown',function(ev){
   var overlay=document.getElementById('quiz-overlay');
@@ -686,20 +720,26 @@ document.addEventListener('keydown',function(ev){
 
 document.addEventListener('DOMContentLoaded',function(){
   try{if(localStorage.getItem('ict_ebas_dark')==='1')document.body.classList.add('dark');}catch(e){}
-  if(!QB().length){el('review-sections').innerHTML='<p style="color:#b71c1c">Missing questions — ensure <code>questions.js</code> loads on this host.</p>';return;}
-  buildToc();buildReviewer();
-  (function(){
-    var qb=QB(),sub=document.querySelector('#quiz-landing .sub');if(!sub||!qb.length)return;
-    var secs={};qb.forEach(function(q){secs[q.section]=1;});var nk=Object.keys(secs).length;
-    sub.textContent='Reviewer + Quiz Bee ('+qb.length+' MCQs · '+nk+' topic decks). Same examiner flow as CA3 Communications / ENVS bank — offline-capable via service worker.';
-  })();
-  el('q-filter').addEventListener('input',applyFilter);
   wireHomeModeCards();
-  var h=(location.hash||'').toLowerCase();
-  if(h==='#quiz'||h==='#quizbee')openQuizBee();
-  else if(h==='#review')closeQuizOverlay();
-  else openQuizOverlay();
+  var qb=QB();
+  var sub=document.querySelector('#quiz-landing .sub');
+  if(!qb.length){
+    if(el('review-sections'))el('review-sections').innerHTML='<p style="color:#b71c1c">Missing questions — ensure <code>questions.js</code> and <code>version.js</code> load (hard-refresh with Ctrl+Shift+R).</p>';
+    if(sub)sub.textContent='Question bank failed to load — refresh the page.';
+  }else{
+    try{buildToc();buildReviewer();}catch(err){
+      console.error(err);
+      if(el('review-sections'))el('review-sections').innerHTML='<p style="color:#b71c1c">Error building reviewer: '+escapeHtml(String(err.message||err))+'</p>';
+    }
+    if(sub){
+      var secs={};qb.forEach(function(q){secs[q.section]=1;});
+      sub.textContent='Reviewer + Quiz Bee ('+qb.length+' MCQs · '+Object.keys(secs).length+' decks) · version '+(window.APP_BANK_VERSION||'?');
+    }
+  }
+  if(el('q-filter'))el('q-filter').addEventListener('input',applyFilter);
+  routeFromHash();
 });
+window.addEventListener('hashchange',routeFromHash);
 
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){
@@ -722,18 +762,6 @@ if('serviceWorker' in navigator){
     ]).then(registerSw).catch(registerSw);
   });
 }
-})();
-</script>
-<script>
-(function(){
-function showHome(){
-  var h=(location.hash||'').toLowerCase();
-  if(h==='#quiz'||h==='#quizbee'){if(typeof openQuizBee==='function')openQuizBee();return;}
-  if(h==='#review'){if(typeof closeQuizOverlay==='function')closeQuizOverlay();return;}
-  if(typeof openQuizOverlay==='function')openQuizOverlay();
-}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',showHome);
-else showHome();
 })();
 </script>
 </body>

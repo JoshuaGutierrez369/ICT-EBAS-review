@@ -8,10 +8,10 @@ Use these **before** exam day to confirm dates, fees, and IRR updates—statutes
 | **RA 9514** Fire Code | [Chan Robles — RA 9514 (19 Dec 2008)](https://www.chanrobles.com/republicacts/republicactno9514.html); repeals **PD 1185** |
 | **NFPA 72 (2019)** | Licensed PDF in your course pack; always cite the **edition** your section adopts |
 | **ANSI/TIA-568** channel length | Industry interpretations of **100 m channel** with **~90 m horizontal + patch budget** (see manufacturer/TA summaries; confirm exact clause in your edition) |
-| **Lecture PDFs** | `ECEN106 L1…`, `L2…`, `L3…`, `L6…` — reconcile any slide typos with primary law text |
+| **Lecture PDFs** | Listed in [`MATERIALS.md`](./MATERIALS.md) — keyed answers follow these files first |
 
 **Live site (after GitHub Pages build):** `https://joshuagutierrez369.github.io/ICT-EBAS-review/`
 
-## Note on the 400-item bank
+## Note on the 2000-item bank
 
-Items are **auto-assembled** from curated stems plus topic-specific padding. Where a stem is generic, the **rationale + refs** still point you to the governing source. For board-style precision, cross-check **BFP IRR / LGU forms** and the **exact NFPA 72 paragraph** your instructor assigns.
+Items are **auto-assembled** from **15 distinct learning cores × 18 scenario frames per topic** (270 combinations; the bank uses 250 per topic). Stems are checked for uniqueness on every rebuild. Where a stem is still generic, the **rationale + refs** point you to the governing source. For board-style precision, cross-check **BFP IRR / LGU forms** and the **exact NFPA 72 paragraph** your instructor assigns.

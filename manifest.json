@@ -2,11 +2,11 @@
   "id": "ict-ebas-review",
   "name": "ECEN 106 ICT & Building Auxiliary Review",
   "short_name": "ECEN106 ICT",
-  "description": "400 MCQs — orientation, auxiliary systems, cabling, PD 1096, RA 9514, NFPA 72",
+  "description": "2000 MCQs — orientation, auxiliary systems, cabling, PD 1096, RA 9514, NFPA 72 (250 × 8 topics)",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0d1117",
+  "background_color": "#f2f7fc",
   "theme_color": "#0d47a1",
   "categories": ["education"],
   "icons": [

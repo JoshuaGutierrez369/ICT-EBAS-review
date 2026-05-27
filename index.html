@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0">
 <!-- Production: https://JoshuaGutierrez369.github.io/ICT-EBAS-review/ -->
 <title>ECEN 106 — ICT / Building Auxiliary Systems Review &amp; Quiz</title>
-<meta name="description" content="ECEN 106 EBAS & ICT — building codes, fire safety, transmission media, structured cabling, NFPA 72 (400 MCQs with references)">
+<meta name="description" content="ECEN 106 EBAS & ICT — building codes, fire safety, transmission media, structured cabling, NFPA 72 (2000 MCQs with references)">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,150 +17,150 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{overflow-x:hidden;-webkit-text-size-adjust:100%}
-body{overflow-x:hidden;max-width:100%;font-family:'Segoe UI',Arial,sans-serif;font-size:14px;background:#f5f8f5;color:#1b1f1e;display:flex;min-height:100vh}
-body.dark{background:#121212;color:#e8f5e9}
+body{overflow-x:hidden;max-width:100%;font-family:'Segoe UI',Arial,sans-serif;font-size:14px;background:#f2f7fc;color:#16232f;display:flex;min-height:100vh}
+body.dark{background:#121212;color:#eceff1}
 body.dark .topbar{background:#1e1e1e;border-bottom-color:#333;color:#eee}
 body.dark nav#toc{background:#0d1117;color:#eee}
-body.dark .psi{background:#1e2220;border-color:#333}
-body.dark .q{border-bottom-color:#2a3a2f}
-body.dark #st{background:#1e221e;border-color:#333;color:#eee}
-body.dark .expl{background:#10291a;border-left-color:#66bb6a;color:#c8e6c9}
+body.dark .psi{background:#1a2330;border-color:#2d3f55}
+body.dark .q{border-bottom-color:#263445}
+body.dark #st{background:#1a2230;border-color:#333;color:#eee}
+body.dark .expl{background:#0d2840;border-left-color:#42a5f5;color:#e3f2fd}
 body.dark .sol{background:#2c1a00;border-left-color:#ffb74d;color:#ffe0b2}
-body.dark .refs{background:#141a14;border-left-color:#558b2f;color:#dcedc8}
-body.dark nav#toc h2{border-bottom-color:#333}
-nav#toc{position:fixed;top:0;left:0;width:236px;height:100vh;overflow-y:auto;background:#1b5e20;color:#e8f5e9;padding:12px 0;z-index:100;display:flex;flex-direction:column}
-nav#toc h2{font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 14px 8px;border-bottom:1px solid rgba(255,255,255,.2);color:#c8e6c9;flex-shrink:0}
+body.dark .refs{background:#12182a;border-left-color:#5c6bc0;color:#dde3ff}
+body.dark nav#toc h2{border-bottom-color:#334}
+nav#toc{position:fixed;top:0;left:0;width:236px;height:100vh;overflow-y:auto;background:linear-gradient(180deg,#0d47a1 0%,#0a3a85 55%,#082f6f 100%);color:#e3f2fd;padding:12px 0;z-index:100;display:flex;flex-direction:column}
+nav#toc h2{font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 14px 8px;border-bottom:1px solid rgba(255,255,255,.18);color:#bbdefb;flex-shrink:0}
 nav#toc .toc-scroll{flex:1;overflow-y:auto}
 nav#toc ul{list-style:none;padding:4px 0}
-nav#toc li a{display:block;padding:6px 14px;color:#e8f5e9;text-decoration:none;font-size:12px;border-left:3px solid transparent}
-nav#toc li a:hover{background:rgba(255,255,255,.1);border-left-color:#c8e6c9}
-nav#toc li.gh>a{color:#fff59d;font-weight:700;font-size:10px;text-transform:uppercase;padding-top:10px}
-.toc-btns{padding:10px 12px;border-top:1px solid rgba(255,255,255,.15);flex-shrink:0;display:flex;flex-direction:column;gap:6px}
+nav#toc li a{display:block;padding:6px 14px;color:#e3f2fd;text-decoration:none;font-size:12px;border-left:3px solid transparent}
+nav#toc li a:hover{background:rgba(255,255,255,.1);border-left-color:#90caf9}
+nav#toc li.gh>a{color:#ffe082;font-weight:700;font-size:10px;text-transform:uppercase;padding-top:10px}
+.toc-btns{padding:10px 12px;border-top:1px solid rgba(255,255,255,.12);flex-shrink:0;display:flex;flex-direction:column;gap:6px}
 .toc-btns button{padding:8px;border:none;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700;width:100%}
-.btn-reviewer{background:#2e7d32;color:#e8f5e9}.btn-reviewer:hover{background:#388e3c}
-.btn-quiz{background:#00695c;color:#b2dfdb}.btn-quiz:hover{background:#00897b;color:#fff}
+.btn-reviewer{background:#1565c0;color:#e3f2fd}.btn-reviewer:hover{background:#1976d2}
+.btn-quiz{background:#006064;color:#b2ebf2}.btn-quiz:hover{background:#00838f;color:#fff}
 .btn-dark{background:#263238;color:#cfd8dc}.btn-dark:hover{background:#37474f}
 main{margin-left:236px;flex:1;display:flex;flex-direction:column;min-width:0}
-.topbar{background:#fff;border-bottom:2px solid #c8e6c9;padding:8px 16px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:90;flex-wrap:wrap;min-width:0}
-.topbar .mode-badge{font-size:11px;font-weight:800;color:#1b5e20;background:#e8f5e9;padding:3px 10px;border-radius:20px}
-.topbar input{flex:1;min-width:0;padding:7px 12px;border:2px solid #a5d6a7;border-radius:8px;font-size:13px}
-.topbar input:focus{outline:none;border-color:#2e7d32}
+.topbar{background:#fff;border-bottom:2px solid #bbdefb;padding:8px 16px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:90;flex-wrap:wrap;min-width:0}
+.topbar .mode-badge{font-size:11px;font-weight:800;color:#0d47a1;background:#e3f2fd;padding:3px 10px;border-radius:20px}
+.topbar input{flex:1;min-width:0;padding:7px 12px;border:2px solid #90caf9;border-radius:8px;font-size:13px}
+.topbar input:focus{outline:none;border-color:#1565c0}
 #mc{font-size:12px;color:#666;white-space:nowrap}
 .main-content{padding:18px;max-width:1040px;width:100%;min-width:0}
-#st{background:#fff;border:1px solid #c8e6c9;border-radius:10px;padding:12px 18px;margin-bottom:18px;display:flex;gap:24px;flex-wrap:wrap}
-#st .sn{font-size:24px;font-weight:800;color:#1b5e20}
+#st{background:#fff;border:1px solid #bbdefb;border-radius:10px;padding:12px 18px;margin-bottom:18px;display:flex;gap:24px;flex-wrap:wrap}
+#st .sn{font-size:24px;font-weight:800;color:#0d47a1}
 #st .sl{font-size:10px;color:#888;text-transform:uppercase}
 section.ps{margin-bottom:28px}
-section.ps h2{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;padding:10px 16px;border-radius:8px 8px 0 0;font-size:14px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;min-width:0}
+section.ps h2{background:linear-gradient(135deg,#0d47a1,#1976d2);color:#fff;padding:10px 16px;border-radius:8px 8px 0 0;font-size:14px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;min-width:0}
 section.ps h2 .bc{opacity:.95;font-weight:600;font-size:11px}
-.psi{background:#fff;border:1px solid #c8e6c9;border-top:none;border-radius:0 0 8px 8px;padding:14px;min-width:0;overflow-x:hidden}
-.q{border-bottom:1px solid #e8ebe8;padding:12px 0;min-width:0}
+.psi{background:#fff;border:1px solid #bbdefb;border-top:none;border-radius:0 0 8px 8px;padding:14px;min-width:0;overflow-x:hidden}
+.q{border-bottom:1px solid #e3eef7;padding:12px 0;min-width:0}
 .q:last-child{border-bottom:none}
 .qh{display:flex;align-items:flex-start;gap:8px;min-width:0}
-.qn{background:#2e7d32;color:#fff;border-radius:50%;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;flex-shrink:0;margin-top:2px}
+.qn{background:#1565c0;color:#fff;border-radius:50%;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;flex-shrink:0;margin-top:2px}
 .qt{font-weight:500;line-height:1.55;flex:1;min-width:0;overflow-wrap:break-word}
 .ch{list-style:none;margin:8px 0 0 34px}
 .ch li{padding:5px 8px;border-radius:6px;margin-bottom:4px;font-size:13px;border:1px solid transparent;overflow-wrap:break-word}
-.ch li.ok{background:#e8f5e9;border-color:#a5d6a7;color:#1b5e20;font-weight:700}
+.ch li.ok{background:#e3f2fd;border-color:#64b5f6;color:#0d47a1;font-weight:700}
 .ch li.ok::before{content:"✓ "}
 .sol{margin:8px 0 0 34px;background:#fff8e1;border-left:4px solid #ffa726;padding:8px 12px;font-size:12.5px;line-height:1.55;color:#4e342e;overflow-wrap:break-word}
 .sol b{display:block;color:#ef6c00;font-size:10px;text-transform:uppercase;margin-bottom:3px}
-.expl{margin:6px 0 0 34px;background:#e8f5e9;border-left:4px solid #43a047;padding:8px 12px;font-size:12px;line-height:1.52;color:#1b3918;display:none}
-.expl b{display:block;color:#2e7d32;font-size:10px;text-transform:uppercase;margin-bottom:3px}
-.refs{margin:8px 0 0 34px;background:#f1f8e9;border-left:4px solid #7cb342;padding:8px 12px;font-size:11.5px;line-height:1.48;color:#33691e;display:none}
-.refs b{display:block;color:#558b2f;font-size:10px;text-transform:uppercase;margin-bottom:5px}
-.refs a{color:#33691e;word-break:break-all}
+.expl{margin:6px 0 0 34px;background:#e3f2fd;border-left:4px solid #2196f3;padding:8px 12px;font-size:12px;line-height:1.52;color:#0d2744;display:none}
+.expl b{display:block;color:#1565c0;font-size:10px;text-transform:uppercase;margin-bottom:3px}
+.refs{margin:8px 0 0 34px;background:#e8eaf6;border-left:4px solid #5c6bc0;padding:8px 12px;font-size:11.5px;line-height:1.48;color:#283593;display:none}
+.refs b{display:block;color:#3949ab;font-size:10px;text-transform:uppercase;margin-bottom:5px}
+.refs a{color:#1a237e;word-break:break-all}
 .q.show-expl .expl,.q.show-expl .refs{display:block}
-.expl-btn{margin:6px 0 0 34px;background:none;border:1px solid #66bb6a;border-radius:18px;color:#1b5e20;font-size:11px;padding:3px 12px;cursor:pointer}
-.concept-card{margin-bottom:12px;border:1px solid #c8e6c9;border-radius:8px;overflow:hidden;background:#fafcfa}
-.concept-toggle{width:100%;text-align:left;padding:10px 14px;background:#e8f5e9;border:none;cursor:pointer;font-size:13px;font-weight:700;color:#1b5e20}
-.concept-body{display:none;padding:12px 14px;font-size:12.5px;line-height:1.6;background:#fff;border-top:1px solid #c8e6c9}
+.expl-btn{margin:6px 0 0 34px;background:none;border:1px solid #42a5f5;border-radius:18px;color:#0d47a1;font-size:11px;padding:3px 12px;cursor:pointer}
+.concept-card{margin-bottom:12px;border:1px solid #bbdefb;border-radius:8px;overflow:hidden;background:#fafcff}
+.concept-toggle{width:100%;text-align:left;padding:10px 14px;background:#e3f2fd;border:none;cursor:pointer;font-size:13px;font-weight:700;color:#0d47a1}
+.concept-body{display:none;padding:12px 14px;font-size:12.5px;line-height:1.6;background:#fff;border-top:1px solid #bbdefb}
 .concept-body.open{display:block}
 .hid{display:none!important}
-body.dark .concept-card{background:#1a1f1c;border-color:#333}
-body.dark .concept-toggle{background:#1e3324;color:#c8e6c9}
+body.dark .concept-card{background:#1a2330;border-color:#2d3f55}
+body.dark .concept-toggle{background:#142c4a;color:#bbdefb}
 
 #quiz-overlay{position:fixed;inset:0;background:#0d1117;z-index:999;display:none;flex-direction:column;overflow-y:auto;overflow-x:hidden;width:100%;max-width:100%}
 #quiz-overlay.open{display:flex!important}
 #quiz-landing{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:28px 12px;gap:18px;text-align:center;width:100%;position:relative;z-index:2}
-#quiz-landing h1{font-size:clamp(22px,5vw,30px);color:#a5d6a7;font-weight:900;max-width:520px;line-height:1.2}
+#quiz-landing h1{font-size:clamp(22px,5vw,30px);color:#bbdefb;font-weight:900;max-width:520px;line-height:1.2}
 #quiz-landing .sub{color:#90a4ae;font-size:14px;max-width:460px;line-height:1.5}
 .mode-cards{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:6px;width:100%;padding:0 8px}
-.mode-card{background:#1e2520;border:2px solid #2e3e32;border-radius:16px;padding:22px 18px;width:min(240px,calc(50% - 7px));min-width:138px;text-align:center;cursor:pointer;transition:.2s box-shadow,.15s transform}
+.mode-card{background:#151c28;border:2px solid #2d4055;border-radius:16px;padding:22px 18px;width:min(240px,calc(50% - 7px));min-width:138px;text-align:center;cursor:pointer;transition:.2s box-shadow,.15s transform}
 .mode-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.45)}
-.reviewer-card:hover{border-color:#66bb6a}.quiz-card:hover{border-color:#4caf50}.concepts-card:hover{border-color:#42a5f5}
+.reviewer-card:hover{border-color:#42a5f5}.quiz-card:hover{border-color:#00acc1}.concepts-card:hover{border-color:#7986cb}
 .mode-card .icon{font-size:40px;margin-bottom:10px}
 .mode-card h2{color:#eceff1;font-size:17px;margin-bottom:8px}
 .mode-card p{color:#90a4ae;font-size:12.5px;line-height:1.45}
 .mode-card .tag{margin-top:10px;display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700}
-.reviewer-card .tag{background:#1b5e20;color:#c8e6c9}
-.quiz-card .tag{background:#2e7d32;color:#e8f5e9}
-.concepts-card .tag{background:#1565c0;color:#e3f2fd}
-.kbd{display:inline-block;background:#2a3830;border:1px solid #444;padding:1px 6px;border-radius:4px;font-family:Consolas,monospace;font-size:11px;color:#aed581;margin:0 2px}
+.reviewer-card .tag{background:#1565c0;color:#e3f2fd}
+.quiz-card .tag{background:#006064;color:#b2ebf2}
+.concepts-card .tag{background:#3949ab;color:#e8eaf6}
+.kbd{display:inline-block;background:#1a2740;border:1px solid #37474f;padding:1px 6px;border-radius:4px;font-family:Consolas,monospace;font-size:11px;color:#90caf9;margin:0 2px}
 
 #quiz-setup{padding:22px 14px;max-width:720px;margin:0 auto;display:none;width:100%}
-#quiz-setup h2{color:#a5d6a7;margin-bottom:14px;font-size:20px}
-.setup-box{background:#1a221c;border-radius:12px;padding:14px 16px;margin-bottom:12px;border:1px solid #2e3e32}
-.setup-box h3{color:#81c784;font-size:10px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+#quiz-setup h2{color:#bbdefb;margin-bottom:14px;font-size:20px}
+.setup-box{background:#151c28;border-radius:12px;padding:14px 16px;margin-bottom:12px;border:1px solid #2d4055}
+.setup-box h3{color:#64b5f6;font-size:10px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
 .topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(190px,100%),1fr));gap:7px;width:100%}
-.topic-label{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:7px;border:1.5px solid #2e3e32;color:#aebfa8;font-size:12px;cursor:pointer;user-select:none}
-.topic-label.sel{background:rgba(76,175,80,.18);border-color:#66bb6a;color:#c8e6c9;font-weight:600}
+.topic-label{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:7px;border:1.5px solid #37474f;color:#b0bec5;font-size:12px;cursor:pointer;user-select:none}
+.topic-label.sel{background:rgba(33,150,243,.2);border-color:#42a5f5;color:#e3f2fd;font-weight:600}
 .topic-label .chk{width:15px;height:15px;border:2px solid #546e7a;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px}
-.topic-label.sel .chk{background:#43a047;border-color:#43a047;color:#fff}
+.topic-label.sel .chk{background:#1976d2;border-color:#1976d2;color:#fff}
 .setup-row{display:flex;gap:12px;flex-wrap:wrap}
 .setup-field{flex:1;min-width:120px;display:flex;flex-direction:column;gap:4px}
 .setup-field label{font-size:10px;color:#90a4ae;text-transform:uppercase}
 .setup-field input,.setup-field select{background:#0d1117;border:1px solid #333;color:#eceff1;border-radius:7px;padding:8px;font-size:13px}
 .back-link{display:block;background:none;border:none;color:#78909c;cursor:pointer;font-size:13px;margin-bottom:12px;text-align:left;padding:0}
 .back-link:hover{color:#fff}
-.sel-all-btn{background:none;border:1px solid #558b2f;color:#aed581;font-size:10px;padding:3px 8px;border-radius:5px;margin-left:6px;cursor:pointer}
-.start-quiz-btn{width:100%;padding:13px;background:#2e7d32;color:#fff;border:none;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;margin-top:8px}
+.sel-all-btn{background:none;border:1px solid #1976d2;color:#90caf9;font-size:10px;padding:3px 8px;border-radius:5px;margin-left:6px;cursor:pointer}
+.start-quiz-btn{width:100%;padding:13px;background:#1565c0;color:#fff;border:none;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;margin-top:8px}
 
 #quiz-screen{display:none;flex-direction:column;min-height:100vh}
-.qz-header{background:#161c18;border-bottom:1px solid #2e4034;padding:9px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.qz-header{background:#141b24;border-bottom:1px solid #2d4055;padding:9px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .qz-prog-wrap{flex:1;min-width:140px}
-.qz-prog-bar{background:#2e3e33;height:5px;border-radius:3px;overflow:hidden}
-.qz-prog-fill{background:linear-gradient(90deg,#2e7d32,#66bb6a);height:100%;width:0%}
+.qz-prog-bar{background:#263445;height:5px;border-radius:3px;overflow:hidden}
+.qz-prog-fill{background:linear-gradient(90deg,#0d47a1,#2196f3);height:100%;width:0%}
 .qz-prog-txt{font-size:11px;color:#78909c;margin-top:3px}
-.qz-timer{background:#142018;border:1px solid #2e7d32;border-radius:20px;padding:3px 12px;color:#a5d6a7;font-weight:700;font-size:13px;min-width:52px;text-align:center}
+.qz-timer{background:#0d2840;border:1px solid #1976d2;border-radius:20px;padding:3px 12px;color:#90caf9;font-weight:700;font-size:13px;min-width:52px;text-align:center}
 .qz-timer.warn{background:#3e1a17;border-color:#e53935;color:#ffcdd2;animation:p .6s infinite}@keyframes p{50%{opacity:.55}}
-.qz-score{background:#1e3e24;border:1px solid #4caf50;color:#c8e6c9;font-weight:700;border-radius:20px;padding:3px 12px;font-size:13px}
+.qz-score{background:#142c4a;border:1px solid #42a5f5;color:#e3f2fd;font-weight:700;border-radius:20px;padding:3px 12px;font-size:13px}
 .qz-end-btn{background:none;border:1px solid #b71c1c;color:#ef9a9a;border-radius:7px;padding:5px 10px;font-size:12px;cursor:pointer;margin-left:auto}
 .qz-body{flex:1;padding:18px 14px;max-width:800px;margin:0 auto;width:100%}
 .qz-qnum{color:#78909c;font-size:11px;margin-bottom:6px}
 .qz-qtext{font-size:clamp(15px,3.8vw,18px);font-weight:650;color:#eceff1;line-height:1.5;margin-bottom:18px}
 .qz-choices{list-style:none;display:flex;flex-direction:column;gap:9px}
-.qz-choice{padding:12px 16px;background:#1a231e;border:2px solid #2e3e32;border-radius:10px;cursor:pointer;font-size:14px;color:#cfd8dc;display:flex;gap:11px}
-.qz-choice:hover:not(.locked){border-color:#66bb6a;background:#243028}
-.qz-choice .qltr{background:#2e4034;color:#aec4a8;border-radius:50%;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;flex-shrink:0}
+.qz-choice{padding:12px 16px;background:#171f2e;border:2px solid #2d4055;border-radius:10px;cursor:pointer;font-size:14px;color:#cfd8dc;display:flex;gap:11px}
+.qz-choice:hover:not(.locked){border-color:#42a5f5;background:#1c283b}
+.qz-choice .qltr{background:#27364d;color:#aec4e8;border-radius:50%;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;flex-shrink:0}
 .qz-choice.locked{cursor:default}
-.qz-choice.correct{background:#1b3523!important;border-color:#4caf50!important;color:#c8e6c9!important}
-.qz-choice.correct .qltr{background:#4caf50;color:#fff}
+.qz-choice.correct{background:#0d3d48!important;border-color:#00bcd4!important;color:#b2ebf2!important}
+.qz-choice.correct .qltr{background:#00acc1;color:#004d40}
 .qz-choice.wrong{background:#3e1518!important;border-color:#e57373!important}
-.qz-choice.show-correct{background:#1b3523;border-color:#4caf50}
+.qz-choice.show-correct{background:#0d3d48;border-color:#00bcd4}
 .qz-feedback{margin-top:16px;padding:13px;border-radius:10px;font-size:13px;line-height:1.5;display:none}
-.qz-feedback.show-c{display:block;background:#15351f;border:1px solid #4caf50;color:#dcedc8}
+.qz-feedback.show-c{display:block;background:#0d353f;border:1px solid #00bcd4;color:#b2ebf2}
 .qz-feedback.show-w{display:block;background:#3e1518;border:1px solid #e57373;color:#ffcdd2}
-.qz-footer{padding:12px 16px;background:#161c18;border-top:1px solid #2e4034;display:flex;justify-content:space-between;align-items:center;max-width:800px;margin:0 auto;width:100%}
-.qz-next-btn{background:#2e7d32;color:#fff;border:none;border-radius:8px;padding:10px 26px;font-size:14px;font-weight:700;cursor:pointer}
-.qz-next-btn:disabled{background:#37474f;color:#889988;opacity:.82;cursor:default}
+.qz-footer{padding:12px 16px;background:#141b24;border-top:1px solid #2d4055;display:flex;justify-content:space-between;align-items:center;max-width:800px;margin:0 auto;width:100%}
+.qz-next-btn{background:#1565c0;color:#fff;border:none;border-radius:8px;padding:10px 26px;font-size:14px;font-weight:700;cursor:pointer}
+.qz-next-btn:disabled{background:#37474f;color:#78909c;opacity:.82;cursor:default}
 
 #quiz-results{padding:28px 16px;max-width:720px;margin:0 auto;display:none;flex-direction:column;gap:14px;width:100%}
-.res-hero{text-align:center;background:#1a221c;border:1px solid #2e3e32;border-radius:16px;padding:28px}
+.res-hero{text-align:center;background:#151c28;border:1px solid #2d4055;border-radius:16px;padding:28px}
 .res-pct{font-size:72px;font-weight:900;line-height:1}
-.res-pct.pass{color:#81c784}.res-pct.fail{color:#ef9a9a}
+.res-pct.pass{color:#4dd0e1}.res-pct.fail{color:#ef9a9a}
 .res-meta{display:flex;gap:22px;justify-content:center;margin-top:14px;flex-wrap:wrap;font-size:14px;color:#cfd8dc}
 .res-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
 .res-btn{padding:9px 20px;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px}
-.res-btn.primary{background:#388e3c;color:#fff}
-.res-btn.outline{background:transparent;color:#aed581;border:1px solid #558b2f}
+.res-btn.primary{background:#1565c0;color:#fff}
+.res-btn.outline{background:transparent;color:#90caf9;border:1px solid #1976d2}
 .wrong-panel{border:1px solid #333;border-radius:10px;overflow:hidden}
 .wrong-panel h3{padding:11px;background:#311a18;color:#ffcdd2;font-size:13px}
-.wrong-item{padding:11px;border-bottom:1px solid #2e3e32;font-size:12.5px;color:#cfd8dc}
+.wrong-item{padding:11px;border-bottom:1px solid #2d4055;font-size:12.5px;color:#cfd8dc}
 .wrong-item:last-child{border-bottom:none}
 
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:4px}
-.hamburger span{display:block;width:22px;height:2.5px;background:#2e7d32;border-radius:2px}
+.hamburger span{display:block;width:22px;height:2.5px;background:#1565c0;border-radius:2px}
 .mob-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:90}.mob-overlay.open{display:block}
 
 @media(max-width:768px){
@@ -202,14 +202,15 @@ body.dark .concept-toggle{background:#1e3324;color:#c8e6c9}
     <div id="st">
       <div class="stat"><div class="sn" id="st-topics">—</div><div class="sl">Topics covered</div></div>
       <div class="stat"><div class="sn" id="st-mcq">—</div><div class="sl">All multiple choice</div></div>
+      <div class="stat"><div class="sn" id="st-bank-ver" style="font-size:11px">—</div><div class="sl">Bank version</div></div>
     </div>
 
-    <p style="margin-bottom:16px;line-height:1.55;color:#555;font-size:13px">CvSU <strong>ECEN 106 — ICT / Building Auxiliary Systems</strong>: eight topic decks × fifty MCQs. Each item cites references (Philippine codes where applicable plus TIA / NFPA industry standards). Prefer your downloaded PDF packs (Orientation, Auxiliary intro, Transmission media, Structured cabling L3, NBC/FC/NFPA L6 lectures) alongside <code>SOURCES.md</code>.</p>
+    <p style="margin-bottom:16px;line-height:1.55;color:#555;font-size:13px">CvSU <strong>ECEN 106 — ICT / Building Auxiliary Systems</strong>: eight topic decks × <strong>250</strong> MCQs each (five times the original 50-item decks). Each item cites references (Philippine codes where applicable plus TIA / NFPA industry standards). Prefer your downloaded PDF packs (Orientation, Auxiliary intro, Transmission media, Structured cabling L3, NBC/FC/NFPA L6 lectures) alongside <code>SOURCES.md</code>.</p>
 
     <div id="review-sections"></div>
 
-    <section class="psi" style="margin-top:24px;border-radius:12px;border:1px solid #c8e6c9" id="concepts-section">
-      <h2 style="background:transparent;color:#1b5e20;padding:0 0 8px;margin:0;font-size:16px">📐 Key concepts &amp; formulae cheat-sheet</h2>
+    <section class="psi" style="margin-top:24px;border-radius:12px;border:1px solid #bbdefb" id="concepts-section">
+      <h2 style="background:transparent;color:#0d47a1;padding:0 0 8px;margin:0;font-size:16px">📐 Key concepts &amp; formulae cheat-sheet</h2>
       <p style="font-size:12.5px;color:#666;margin-bottom:10px">Supplements lecture PDFs — verify equations against your adopted code edition.</p>
 
       <div class="concept-card"><button type="button" class="concept-toggle">L1 — Course orientation ▾</button><div class="concept-body"><ul>
@@ -271,10 +272,10 @@ body.dark .concept-toggle{background:#1e3324;color:#c8e6c9}
 <div id="quiz-overlay">
   <div id="quiz-landing">
     <h1>ECEN 106 — ICT &amp; Building Auxiliary Systems</h1>
-    <p class="sub">Reviewer + Quiz Bee (400&nbsp;MCQs in 8 topics). Same examiner flow as CA3 Communications / ENVS bank—offline-capable via service worker.</p>
+    <p class="sub">Reviewer + Quiz Bee (2000&nbsp;MCQs in 8 topics). Same examiner flow as CA3 Communications / ENVS bank—offline-capable via service worker.</p>
     <div class="mode-cards">
       <div class="mode-card reviewer-card"><div class="icon">📖</div><h2>Reviewer</h2><p>Browse MCQs with correct answers, rationale, and citations.</p><span class="tag">Browse</span></div>
-      <div class="mode-card quiz-card"><div class="icon">🎯</div><h2>Quiz Bee</h2><p>Select topics (50 questions each deck), shuffle, optional timer.</p><span class="tag">Practice</span></div>
+      <div class="mode-card quiz-card"><div class="icon">🎯</div><h2>Quiz Bee</h2><p>Select topics (250 questions each deck), shuffle, optional timer.</p><span class="tag">Practice</span></div>
       <div class="mode-card concepts-card"><div class="icon">📐</div><h2>Key concepts</h2><p>Cheatsheet: codes, cabling limits, NFPA notions—scroll to formulae deck.</p><span class="tag">Study</span></div>
     </div>
     <p style="font-size:12px;color:#78909c">Keys: <span class="kbd">A</span><span class="kbd">D</span> or <span class="kbd">1</span><span class="kbd">4</span> · <kbd style="margin:0;background:#263238;padding:4px;border-radius:4px;color:#cfd8dc">Enter</kbd> next · Esc close</p>
@@ -292,7 +293,7 @@ body.dark .concept-toggle{background:#1e3324;color:#c8e6c9}
     <div class="setup-box">
       <h3>Settings</h3>
       <div class="setup-row">
-        <div class="setup-field"><label># Questions</label><input type="number" id="qz-num" value="40" min="1" max="400"></div>
+        <div class="setup-field"><label># Questions</label><input type="number" id="qz-num" value="40" min="1" title="Capped to bank size on load"></div>
         <div class="setup-field"><label>Seconds/question (0 = no timer)</label><input type="number" id="qz-time" value="0" min="0"></div>
       </div>
     </div>
@@ -326,14 +327,15 @@ body.dark .concept-toggle{background:#1e3324;color:#c8e6c9}
       <div class="res-actions">
         <button type="button" class="res-btn outline" onclick="showLandingAfterResults()">Home</button>
         <button type="button" class="res-btn primary" onclick="retryWrong()">Retry missed</button>
-        <button type="button" class="res-btn primary" onclick="restartQuizSetup()" style="background:#558b2f">New quiz</button>
+        <button type="button" class="res-btn primary" onclick="restartQuizSetup()" style="background:#1565c0">New quiz</button>
       </div>
     </div>
     <div class="wrong-panel" id="wrong-panel-wrap" style="display:none"><h3>Review mistakes</h3><div id="wrong-list-body"></div></div>
   </div>
 </div>
 
-<script src="questions.js"></script>
+<script src="version.js?v=materials-2026-05-27-v7"></script>
+<script src="questions.js?v=materials-2026-05-27-v7"></script>
 <script>
 (function(){
 'use strict';
@@ -426,13 +428,26 @@ function buildReviewer(){
   countStats();
 }
 
+function syncQzNumCaps(){
+  var qba=QB();
+  var inp=el('qz-num');
+  if(!inp||!qba.length)return;
+  var cap=Math.max(1,qba.length);
+  inp.max=cap;
+  var cur=parseInt(inp.value,10);
+  if(!cur||cur<1)inp.value=Math.min(40,cap);
+  else if(cur>cap)inp.value=cap;
+}
+
 function countStats(){
   var qba=QB();
   var topicMap={};
   qba.forEach(function(q){topicMap[q.section]=true;});
   el('st-topics').textContent=Object.keys(topicMap).length+' topics · '+qba.length+' MCQs';
   el('st-mcq').textContent=qba.filter(function(q){return q.type==='mcq';}).length+' items';
+  if(el('st-bank-ver'))el('st-bank-ver').textContent=window.APP_BANK_VERSION||'legacy';
   el('total-qs').textContent=qba.length;
+  syncQzNumCaps();
 }
 
 function applyFilter(){
@@ -626,7 +641,7 @@ function finalizeQuiz(){
     var your=w.timed?'(timed out)':((w.selected||'?').toUpperCase());
     div.innerHTML='<div style="opacity:.85;margin-bottom:4px">'+(escapeHtml(w.q.secTitle||w.q.section))+'</div>'+
       escapeHtml(w.q.text)+'<div style="margin-top:8px;color:#ef9a9a">Your pick: '+escapeHtml(String(your))+'</div>'+
-      '<div style="color:#a5d6a7;margin-top:4px">Correct: '+escapeHtml(correctLabel(w.q))+'</div>';
+      '<div style="color:#90caf9;margin-top:4px">Correct: '+escapeHtml(correctLabel(w.q))+'</div>';
     wl.appendChild(div);
   });}else{panel.style.display='none';}
 }
@@ -673,6 +688,11 @@ document.addEventListener('DOMContentLoaded',function(){
   try{if(localStorage.getItem('ict_ebas_dark')==='1')document.body.classList.add('dark');}catch(e){}
   if(!QB().length){el('review-sections').innerHTML='<p style="color:#b71c1c">Missing questions — ensure <code>questions.js</code> loads on this host.</p>';return;}
   buildToc();buildReviewer();
+  (function(){
+    var qb=QB(),sub=document.querySelector('#quiz-landing .sub');if(!sub||!qb.length)return;
+    var secs={};qb.forEach(function(q){secs[q.section]=1;});var nk=Object.keys(secs).length;
+    sub.textContent='Reviewer + Quiz Bee ('+qb.length+' MCQs · '+nk+' topic decks). Same examiner flow as CA3 Communications / ENVS bank — offline-capable via service worker.';
+  })();
   el('q-filter').addEventListener('input',applyFilter);
   wireHomeModeCards();
   var h=(location.hash||'').toLowerCase();
@@ -683,7 +703,23 @@ document.addEventListener('DOMContentLoaded',function(){
 
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){
-    navigator.serviceWorker.register('./sw.js').catch(function(){});
+    var BANK_VER=window.APP_BANK_VERSION||'materials-2026-05-27-v7';
+    var swUrl='./sw.js?v='+encodeURIComponent(BANK_VER);
+    var prev=localStorage.getItem('ict-bank-version');
+    var clearCaches=prev!==BANK_VER;
+    function registerSw(){
+      navigator.serviceWorker.register(swUrl).catch(function(){});
+    }
+    if(!clearCaches){registerSw();return;}
+    localStorage.setItem('ict-bank-version',BANK_VER);
+    Promise.all([
+      navigator.serviceWorker.getRegistrations().then(function(regs){
+        return Promise.all(regs.map(function(r){return r.unregister();}));
+      }),
+      caches.keys().then(function(keys){
+        return Promise.all(keys.map(function(k){return caches.delete(k);}));
+      })
+    ]).then(registerSw).catch(registerSw);
   });
 }
 })();
